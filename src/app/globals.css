@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0719EA;
+  --color-brand-blue-deep: #062B91;
+  --color-brand-yellow: #FFDC00;
+  --color-brand-graphite: #0F1F47;
+  --color-brand-black: #06112C;
+  --color-brand-gray: #F3F5F8;
+  --color-brand-surface: #0B1C44;
+  --color-brand-surface-card: #0F255C;
+  --color-brand-border: #1B357A;
+  --color-brand-border-glow: #0719EA80;
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-outfit), var(--font-inter), system-ui, sans-serif;
+}
+
+:root {
+  --bg-dark: #06153B;
+  --bg-card: #0D2258;
+  --brand-blue: #0719EA;
+  --brand-blue-deep: #062B91;
+  --brand-yellow: #FFDC00;
+  --brand-graphite: #0F1F47;
+  --brand-gray: #F3F5F8;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #061334;
+  color: #F3F5F8;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle speed line / automotive pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(7, 25, 234, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 25, 234, 0.12) 1px, transparent 1px);
+}
+
+.bg-speed-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    rgba(7, 25, 234, 0.15) 20px,
+    rgba(7, 25, 234, 0.15) 40px
+  );
+}
+
+.bg-speed-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 15px,
+    rgba(255, 220, 0, 0.08) 15px,
+    rgba(255, 220, 0, 0.08) 30px
+  );
+}
+
+/* Glassmorphism with Brand Tint */
+.glass-header {
+  background: rgba(6, 43, 145, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 220, 0, 0.2);
+}
+
+.glass-card {
+  background: rgba(13, 34, 88, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(7, 25, 234, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #05102B;
+}
+::-webkit-scrollbar-thumb {
+  background: #062B91;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFDC00;
+}
+
+/* Accessible outline */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #FFDC00;
+  outline-offset: 3px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
